@@ -96,7 +96,7 @@
 		A9AB0BC91E38CCFC0069F4AA /* Wildlife.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Wildlife.plist; path = "All-Sports/Data/Wildlife.plist"; sourceTree = SOURCE_ROOT; };
 		A9AB0BCB1E38CD200069F4AA /* Pets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Pets.plist; path = "All-Sports/Data/Pets.plist"; sourceTree = SOURCE_ROOT; };
 		A9AB0BCD1E38CD550069F4AA /* calendar-add-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-add-128.png"; sourceTree = "<group>"; };
-		A9FC61241E38C7EC00C558F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "View controllers/Main.storyboard"; sourceTree = "<group>"; };
+		A9FC61241E38C7EC00C558F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "All-Sports/View controllers/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,6 @@
 		A96806DE1E38C48000CA5524 /* All-Sports */ = {
 			isa = PBXGroup;
 			children = (
-				A9FC61241E38C7EC00C558F6 /* Main.storyboard */,
 				A9AB0BC41E38CC520069F4AA /* View */,
 				A968072C1E38C66B00CA5524 /* Model */,
 				A968070D1E38C57C00CA5524 /* View controllers */,
@@ -245,6 +244,7 @@
 		A9AB0BC41E38CC520069F4AA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9FC61241E38C7EC00C558F6 /* Main.storyboard */,
 				A9AB0BCD1E38CD550069F4AA /* calendar-add-128.png */,
 				A9AB0BC51E38CC520069F4AA /* EventCell.swift */,
 			);

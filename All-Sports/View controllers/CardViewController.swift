@@ -108,7 +108,7 @@ class CardViewController: UIViewController, UITextFieldDelegate {
   var reminders: [EKReminder]!
   var eventStore = EKEventStore()
   
-  func prepareEventPickert() {
+  func prepareEventPicker() {
     
     var titles : [String] = []
     var startDates : [NSDate] = []
@@ -146,9 +146,10 @@ class CardViewController: UIViewController, UITextFieldDelegate {
               if let itemKey = (self.sportsCard?.matchItemKey)  {
                 //        let refString:String = "/users/\(user.uid)/match-items/\(self.key!)/\(itemKey)"
                 
-                let eVC = EKEventViewController()
+                let eVC = EKEventEditViewController()
+                
 //                eVC.allowsCalendarPreview = true //?
-                eVC.allowsEditing = true
+//                eVC.allowsEditing = true
 //                eVC.modalPresentationCapturesStatusBarAppearance = true
                 eVC.event = events[0]
 //                eVC.event.location
@@ -193,7 +194,7 @@ class CardViewController: UIViewController, UITextFieldDelegate {
 //        print("The app is not permitted to access reminders, make sure to grant permission in the settings and try again")
 //      }
 //    }
-  func prepareEventPicker() {
+  func prepareEventPickert() {
     if let pickerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idEKVC") as? EKVC {
       
       if let user = FIRAuth.auth()?.currentUser {
