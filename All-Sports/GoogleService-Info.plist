@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>862052915909-bnrc3sbvopn167be1a8lvl7ok4me5f11.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.862052915909-bnrc3sbvopn167be1a8lvl7ok4me5f11</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCnHKgyk880U6wxId5fL4pTO7_vtc65LCk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>862052915909</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.onomatopee.AllSports-PG</string>
+	<key>PROJECT_ID</key>
+	<string>as-pg-260b7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>as-pg-260b7.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:862052915909:ios:77968bbbe86c3f78</string>
+	<key>DATABASE_URL</key>
+	<string>https://as-pg-260b7.firebaseio.com</string>
+</dict>
+</plist>

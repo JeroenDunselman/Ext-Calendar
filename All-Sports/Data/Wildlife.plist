@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Wildlife</key>
+	<array>
+		<dict>
+			<key>image</key>
+			<string>epic_dog</string>
+			<key>name</key>
+			<string>sportPicker</string>
+			<key>description</key>
+			<string>Welke sport ga je doen?</string>
+			<key>matchItemKey</key>
+			<string>sport</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>sad_dog</string>
+			<key>name</key>
+			<string>opponentPicker</string>
+			<key>description</key>
+			<string>Met wie ga je spelen? Wie daag je uit</string>
+			<key>matchItemKey</key>
+			<string>participants</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>back_cat</string>
+			<key>name</key>
+			<string>eventPicker</string>
+			<key>description</key>
+			<string>Waar en wanneer?</string>
+			<key>matchItemKey</key>
+			<string>time</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>sleepy_cat</string>
+			<key>name</key>
+			<string>scorePicker</string>
+			<key>description</key>
+			<string>Wat was de uitslag?</string>
+			<key>matchItemKey</key>
+			<string>result</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>boring_fish</string>
+			<key>name</key>
+			<string>imageGallery</string>
+			<key>description</key>
+			<string>Voeg een foto toe.</string>
+			<key>matchItemKey</key>
+			<string>image</string>
+		</dict>
+	</array>
+</dict>
+</plist>
