@@ -10,24 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="7ve-uq-oad">
-            <objects>
-                <viewController restorationIdentifier="PagesContentController1" storyboardIdentifier="PagesContentController1" id="40G-qe-6h0" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6EE-Yx-jT6"/>
-                        <viewControllerLayoutGuide type="bottom" id="AnK-uQ-h3P"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3y6-Pb-fum">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.67635579010000002" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pkn-8G-lUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4730" y="-1782"/>
-        </scene>
         <!--Sport PickerVC-->
         <scene sceneID="Wvf-ux-R8u">
             <objects>
@@ -49,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RwI-7d-Qak" id="ePe-8K-gv5">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -84,16 +66,6 @@
             </objects>
             <point key="canvasLocation" x="2734" y="740"/>
         </scene>
-        <!--Blues-->
-        <scene sceneID="UHa-DE-4C1">
-            <objects>
-                <pageViewController storyboardIdentifier="thePVC" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="w1u-gy-sAG" customClass="MyPagesViewController" customModule="All_Sports" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Blues" id="ByF-JE-HuY"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dqV-WH-gtk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4241" y="-1558"/>
-        </scene>
         <!--My Stats-->
         <scene sceneID="Lg4-xr-G4z">
             <objects>
@@ -103,78 +75,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLn-Wd-u6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1532" y="-1558"/>
-        </scene>
-        <!--Account-->
-        <scene sceneID="new-JL-1iq">
-            <objects>
-                <viewController title="Account" id="8f1-Yw-fZs" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vxe-VL-7gE"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ysb-Jy-Q7G"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MmY-UQ-znX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1o-rV-ujO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPj-4Y-oYd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1667"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="try-xW-mFY">
-                                                <rect key="frame" x="8" y="8" width="359" height="1651"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.24934738874435425" green="0.3042711615562439" blue="0.45490771532058716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="try-xW-mFY" firstAttribute="top" secondItem="yPj-4Y-oYd" secondAttribute="topMargin" id="D5O-oh-O3H"/>
-                                            <constraint firstAttribute="bottom" secondItem="try-xW-mFY" secondAttribute="bottom" constant="8" id="P9H-fO-uVF"/>
-                                            <constraint firstItem="try-xW-mFY" firstAttribute="trailing" secondItem="yPj-4Y-oYd" secondAttribute="trailingMargin" id="PRB-oE-i1z"/>
-                                            <constraint firstItem="try-xW-mFY" firstAttribute="leading" secondItem="yPj-4Y-oYd" secondAttribute="leadingMargin" id="jeu-sL-9Q7"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="yPj-4Y-oYd" secondAttribute="bottom" constant="-49" id="OSp-Kw-eiJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="yPj-4Y-oYd" secondAttribute="trailing" id="gPY-lc-9cv"/>
-                                    <constraint firstItem="yPj-4Y-oYd" firstAttribute="leading" secondItem="R1o-rV-ujO" secondAttribute="leading" id="gzm-fe-bZQ"/>
-                                    <constraint firstItem="yPj-4Y-oYd" firstAttribute="top" secondItem="R1o-rV-ujO" secondAttribute="top" id="uif-KG-xEW"/>
-                                </constraints>
-                            </scrollView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNa-FJ-8R0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gQ5-CW-y3H">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="20" id="Egs-jw-nRE"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="fac-Sv-1J1"/>
-                                    <constraint firstAttribute="height" constant="20" id="qlt-7i-14o"/>
-                                </constraints>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.24934738874435425" green="0.3042711615562439" blue="0.45490771532058716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="R1o-rV-ujO" firstAttribute="top" secondItem="MmY-UQ-znX" secondAttribute="top" id="1IF-lb-Mmm"/>
-                            <constraint firstItem="R1o-rV-ujO" firstAttribute="leading" secondItem="MmY-UQ-znX" secondAttribute="leading" id="DH5-OZ-XTY"/>
-                            <constraint firstAttribute="trailing" secondItem="R1o-rV-ujO" secondAttribute="trailing" id="Kt8-VF-mI6"/>
-                            <constraint firstItem="yPj-4Y-oYd" firstAttribute="width" secondItem="MmY-UQ-znX" secondAttribute="width" priority="250" id="aNp-zJ-PkI"/>
-                            <constraint firstItem="Ysb-Jy-Q7G" firstAttribute="top" secondItem="R1o-rV-ujO" secondAttribute="bottom" id="cei-pa-UzL"/>
-                            <constraint firstItem="wNa-FJ-8R0" firstAttribute="top" secondItem="vxe-VL-7gE" secondAttribute="bottom" constant="-20" id="dBd-b8-gOT"/>
-                            <constraint firstAttribute="trailing" secondItem="wNa-FJ-8R0" secondAttribute="trailing" id="wW7-c1-mvP"/>
-                            <constraint firstItem="yPj-4Y-oYd" firstAttribute="height" secondItem="MmY-UQ-znX" secondAttribute="height" constant="1000" id="xjL-BV-kic"/>
-                            <constraint firstItem="wNa-FJ-8R0" firstAttribute="leading" secondItem="MmY-UQ-znX" secondAttribute="leading" id="yRR-i7-3iM"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Account" id="VyM-YS-gEZ" userLabel="Account"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PuW-z2-LOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4505" y="-2275"/>
         </scene>
         <!--Card View Controller-->
         <scene sceneID="hOT-C8-KbY">
@@ -255,42 +155,6 @@
             </objects>
             <point key="canvasLocation" x="3455" y="69"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="GsP-Gv-Lfp">
-            <objects>
-                <viewController restorationIdentifier="Orange" storyboardIdentifier="Orange" id="1di-Bh-y4d" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PfP-Ah-hYr"/>
-                        <viewControllerLayoutGuide type="bottom" id="Q6Q-pN-9QI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TQv-Cc-29b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.59215686270000001" green="0.72941176470000002" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ioe-KT-SZs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3670" y="-2122"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="g0N-ke-KWx">
-            <objects>
-                <viewController restorationIdentifier="PagesContentController2" storyboardIdentifier="PagesContentController2" id="vMh-Gr-P6b" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dMG-nH-MS6"/>
-                        <viewControllerLayoutGuide type="bottom" id="ila-2R-7Dh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="03Y-50-wcc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.54065287110000004" green="0.92861539130000004" blue="0.85906833410000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UKJ-9Z-naV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4862" y="-1586"/>
-        </scene>
         <!--SportPVC-->
         <scene sceneID="LZZ-Dd-QKN">
             <objects>
@@ -356,7 +220,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W5O-9k-MU0" id="emn-KX-0Ts">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -613,39 +477,6 @@
             </objects>
             <point key="canvasLocation" x="252" y="215"/>
         </scene>
-        <!--Events Table-->
-        <scene sceneID="heZ-Ev-Wxx">
-            <objects>
-                <tableViewController storyboardIdentifier="idEventsTVC" id="TBb-NQ-hxk" customClass="EventsTVC" customModule="All_Sports" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eqI-kD-7jU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="idEventCell" selectionStyle="default" indentationWidth="10" id="gBj-hX-kZa" customClass="EventCell" customModule="All_Sports" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gBj-hX-kZa" id="uEu-wB-JT4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="TBb-NQ-hxk" id="hA4-ku-tG4"/>
-                            <outlet property="delegate" destination="TBb-NQ-hxk" id="uet-uR-Zro"/>
-                        </connections>
-                    </tableView>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Events Table" id="zRy-kp-4Vh"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UkH-YG-Ny9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3223" y="-1642"/>
-        </scene>
         <!--EventsPVC-->
         <scene sceneID="bj9-Ny-H44">
             <objects>
@@ -702,7 +533,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IHI-wq-Egk" id="qrj-WD-64D">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="276" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" restorationIdentifier="idEventCellTitle" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rUC-96-XgX">
@@ -753,24 +584,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrV-ck-th8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2463" y="-469"/>
-        </scene>
-        <!--Red-->
-        <scene sceneID="fbM-4u-Mq4">
-            <objects>
-                <viewController storyboardIdentifier="Red" title="Red" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BNL-So-EXa" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hAg-7o-BbS"/>
-                        <viewControllerLayoutGuide type="bottom" id="eHX-NI-TT1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BVS-em-mFE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g5S-Ox-2Vf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3844" y="-1350"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="Y8i-pB-HMu">
@@ -871,6 +684,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN8-a4-HKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1328.8" y="176.76161919040482"/>
+        </scene>
+        <!--Calendar PickerVC-->
+        <scene sceneID="rrg-dE-Uki">
+            <objects>
+                <viewController storyboardIdentifier="idCalendarPicker" id="Pl1-WG-nhj" customClass="CalendarPickerVC" customModule="All_Sports" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hbf-mS-cs5"/>
+                        <viewControllerLayoutGuide type="bottom" id="N9G-jt-wlL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lv3-7N-vSB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kCA-do-Xqj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="calendarCell" id="631-0W-yjx">
+                                        <rect key="frame" x="0.0" y="28" width="359" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="631-0W-yjx" id="tsa-dp-eSO">
+                                            <rect key="frame" x="0.0" y="0.0" width="359" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kCA-do-Xqj" secondAttribute="trailing" id="8hP-J8-gO5"/>
+                            <constraint firstItem="kCA-do-Xqj" firstAttribute="leading" secondItem="Lv3-7N-vSB" secondAttribute="leading" id="C9l-oG-Szm"/>
+                            <constraint firstItem="N9G-jt-wlL" firstAttribute="top" secondItem="kCA-do-Xqj" secondAttribute="bottom" constant="139" id="o3E-OD-SYM"/>
+                            <constraint firstItem="kCA-do-Xqj" firstAttribute="top" secondItem="Hbf-mS-cs5" secondAttribute="bottom" constant="8" symbolic="YES" id="qdG-ch-xQl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="kCA-do-Xqj" id="ZLg-I7-hiy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fI7-yu-A6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.60000000000002" y="914.392803598201"/>
         </scene>
     </scenes>
     <resources>

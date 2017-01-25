@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		356AEA5CAEF9F8A953FBED29 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AA90B2A1B9B6DCC65A9F63B /* Pods.framework */; };
+		A90C44481E38EC0F00071CCB /* CalendarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C44471E38EC0F00071CCB /* CalendarPickerVC.swift */; };
+		A90C444A1E38F63200071CCB /* DashBoardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90C44491E38F63200071CCB /* DashBoardVC.swift */; };
 		A96806E01E38C48000CA5524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96806DF1E38C48000CA5524 /* AppDelegate.swift */; };
 		A96806E71E38C48000CA5524 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96806E61E38C48000CA5524 /* Assets.xcassets */; };
 		A96806EA1E38C48000CA5524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96806E81E38C48000CA5524 /* LaunchScreen.storyboard */; };
@@ -26,6 +28,7 @@
 		A968073A1E38C6BE00CA5524 /* SportPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96807391E38C6BE00CA5524 /* SportPVC.swift */; };
 		A968073C1E38C6D600CA5524 /* ResultPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A968073B1E38C6D600CA5524 /* ResultPickerVC.swift */; };
 		A968073E1E38C72A00CA5524 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A968073D1E38C72A00CA5524 /* GoogleService-Info.plist */; };
+		A9A46A331E38E60A00C69B5C /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A46A321E38E60A00C69B5C /* AccountVC.swift */; };
 		A9AB0BBD1E38CBBD0069F4AA /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB0BB81E38CBBD0069F4AA /* AnimationHelper.swift */; };
 		A9AB0BBE1E38CBBD0069F4AA /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB0BB91E38CBBD0069F4AA /* AppState.swift */; };
 		A9AB0BBF1E38CBBD0069F4AA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AB0BBA1E38CBBD0069F4AA /* Constants.swift */; };
@@ -61,6 +64,8 @@
 		5AA90B2A1B9B6DCC65A9F63B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7129CD97349499D8B336C527 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		982884BB566EBF24BC15F6F9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A90C44471E38EC0F00071CCB /* CalendarPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarPickerVC.swift; sourceTree = "<group>"; };
+		A90C44491E38F63200071CCB /* DashBoardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashBoardVC.swift; sourceTree = "<group>"; };
 		A96806DC1E38C48000CA5524 /* All-Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "All-Sports.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96806DF1E38C48000CA5524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A96806E61E38C48000CA5524 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +90,7 @@
 		A96807391E38C6BE00CA5524 /* SportPVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportPVC.swift; sourceTree = "<group>"; };
 		A968073B1E38C6D600CA5524 /* ResultPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultPickerVC.swift; sourceTree = "<group>"; };
 		A968073D1E38C72A00CA5524 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9A46A321E38E60A00C69B5C /* AccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		A9AB0BB81E38CBBD0069F4AA /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
 		A9AB0BB91E38CBBD0069F4AA /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A9AB0BBA1E38CBBD0069F4AA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -193,6 +199,8 @@
 		A968070D1E38C57C00CA5524 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A90C44491E38F63200071CCB /* DashBoardVC.swift */,
+				A9A46A321E38E60A00C69B5C /* AccountVC.swift */,
 				A9AB0BC71E38CC820069F4AA /* RevealViewController.swift */,
 				A968073B1E38C6D600CA5524 /* ResultPickerVC.swift */,
 				A96807391E38C6BE00CA5524 /* SportPVC.swift */,
@@ -201,6 +209,7 @@
 				A968070F1E38C57C00CA5524 /* EKVC.swift */,
 				A96807101E38C57C00CA5524 /* EventsPVC.swift */,
 				A96807121E38C57C00CA5524 /* ViewController.swift */,
+				A90C44471E38EC0F00071CCB /* CalendarPickerVC.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -451,9 +460,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A46A331E38E60A00C69B5C /* AccountVC.swift in Sources */,
+				A90C44481E38EC0F00071CCB /* CalendarPickerVC.swift in Sources */,
 				A96806E01E38C48000CA5524 /* AppDelegate.swift in Sources */,
 				A9AB0BBF1E38CBBD0069F4AA /* Constants.swift in Sources */,
 				A9AB0BC01E38CBBD0069F4AA /* MeasurementHelper.swift in Sources */,
+				A90C444A1E38F63200071CCB /* DashBoardVC.swift in Sources */,
 				A96807341E38C66B00CA5524 /* SportsCard.swift in Sources */,
 				A9AB0BBD1E38CBBD0069F4AA /* AnimationHelper.swift in Sources */,
 				A9AB0BC81E38CC820069F4AA /* RevealViewController.swift in Sources */,
