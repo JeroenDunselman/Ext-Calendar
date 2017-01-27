@@ -43,6 +43,7 @@ extension AccountVC: UITableViewDelegate, UITableViewDataSource  {
   func loadCalendarPicker() {
     if let pickerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idCalendarPicker") as? CalendarPickerVC {
       pickerVC.navigationItem.leftBarButtonItem = UIBarButtonItem(title:   "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBack))
+      pickerVC.title = "My Calendars"
       let navController = UINavigationController(rootViewController: pickerVC)
       self.present(navController, animated:true, completion: nil)
     }

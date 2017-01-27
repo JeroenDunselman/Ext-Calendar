@@ -8,34 +8,78 @@
 
 import UIKit
 import EventKit
+import Firebase
 //import EventKitUI
+
+struct calendarInfo {
+  var title:String?
+  var color:CGColor?
+  var numberOfEvents:Int?
+  var isActiveCalendar:Bool?
+  var isSportsCalendar:Bool?
+}
 
 class CalendarPickerVC: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
-  
-  
-  
-  var calendarItems:[String] = []
   let textCellIdentifier = "calendarCell"
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-getActiveCalendars()
-      
-//      dispatch_async(DispatchQueue.global(DispatchQueue.GlobalQueuePriority.default, 0)) {
-//      
-//      }
-      
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+  var systemCalendars:[calendarInfo] = []
+  var inactiveCalendars:[calendarInfo] = []
+  var sportsCalendars:[SportsCalendar] = []
+  var inactiveSportsCalendars:[SportsCalendar] = []
+  var titles:[String] = []
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.tableView.delegate = self
+    self.tableView.dataSource = self
+    
+    DispatchQueue.global().async() {
+      self.getActiveSportsCalendars()
     }
     
-  func getActiveCalendars() {
+    // Do any additional setup after loading the view.
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  func createDataSet() {
+    self.titles = sportsCalendars.map{$0.name}
+    if self.titles.count > 0 {
+      inactiveCalendars = systemCalendars.filter{!self.titles.contains($0.title!)}
+    } else {
+      inactiveCalendars = systemCalendars
+    }
+//      .map{$0.title!}
+//    titles.append(contentsOf: inactiveCalendarTitles)
+  }
+  
+  func getActiveSportsCalendars() {
+    if let user = FIRAuth.auth()?.currentUser {
+      let refString:String = "/users/\(user.uid)/calendars"
+      let ref = FIRDatabase.database().reference(withPath: refString )
+      ref.observe(.value, with: { snapshot in
+        var calendars: [SportsCalendar] = []
+        for item in snapshot.children { let calendar = SportsCalendar(snapshot: item as! FIRDataSnapshot)
+          calendars.append(calendar)
+        }
+        DispatchQueue.main.async() {
+          self.sportsCalendars = calendars.filter{$0.active}
+          self.inactiveSportsCalendars = calendars.filter{!$0.active}
+          self.getSystemCalendars()
+        }
+        //      self.tableView.delegate = self
+        //      self.tableView.dataSource = self
+        //      self.tableView.reloadData()
+      })
+    }
+  }
+  
+  func getSystemCalendars() {
     var eventStore = EKEventStore()
     var titles : [String] = []
     var startDates : [NSDate] = []
@@ -51,15 +95,21 @@ getActiveCalendars()
         //        print("granted \(granted)")
         // add self.fetchEvents()
         let calendars = eventStore.calendars(for: .event)
-        
+        self.systemCalendars = []
         for calendar in calendars {
           print(calendar.title)
-//          titles.append(calendar.title)
-          self.calendarItems.append(calendar.title)
+          //          titles.append(calendar.title)
+          let info = calendarInfo(title: calendar.title, color:calendar.cgColor, numberOfEvents: 0, isActiveCalendar: false, isSportsCalendar: false)
+          self.systemCalendars.append(info)
+          print(calendar.cgColor)
         }
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.reloadData()
+        
+        DispatchQueue.main.async() {
+          //calendar sets fb/icloud in/active in seperate sections
+          self.createDataSet()
+          self.tableView.reloadData()
+        }
+        //        self.tableView.reloadData()
         
       } else {
         print("error \(error)")
@@ -68,88 +118,130 @@ getActiveCalendars()
     })
     
   }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
 }
+
+// MARK:  UITableViewDelegate Methods
 extension CalendarPickerVC: UITableViewDataSource, UITableViewDelegate {
-  // MARK:  UITextFieldDelegate Methods
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 1
+
+  func numberOfSections(in tableView: UITableView) -> Int {
+    return 2
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.calendarItems.count //eventCards.count
+    var result:Int = 0
+    if section == 0 {
+      result = self.sportsCalendars.count //eventCards.countcalendarItems
+    } else if section == 1 {
+      result = self.inactiveCalendars.count
+    }
+    return result
   }
   
   internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath as IndexPath)
-    
-    //    let cell:EventCell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier) as! EventCell
     let row = indexPath.row
-    cell.textLabel?.text = calendarItems[row]
+    
+    cell.backgroundColor = UIColor.black
+    cell.textLabel?.textColor = UIColor.white
+
+    switch (indexPath.section) {
+    case 0:
+      cell.textLabel?.text = sportsCalendars[row].title()
+      let sysCal =
+        systemCalendars.filter{$0.title == sportsCalendars[row].name}
+      if sysCal.count > 0 {
+        cell.backgroundColor = UIColor(cgColor: sysCal[0].color!)
+      }
+    case 1:
+      cell.textLabel?.text = inactiveCalendars[row].title
+      let uiColor = UIColor(cgColor: inactiveCalendars[row].color!)
+      cell.backgroundColor = uiColor
+    default:
+      cell.textLabel?.text = "Other"
+    }
     return cell
   }
   
-  // MARK:  UITableViewDelegate Methods
-  
   func goBack(){
     dismiss(animated: true, completion: nil)
-//    if crudController.crudMode == crud.crudMode.create {
-//      
-//    } else {
-//      print(crudController.crudMode)
-//    }
-    
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    var result:String = ""
+    if section == 0 {
+      result = "Sports Calendars"
+      if self.sportsCalendars.count == 0 {
+        result = "Select Calendar For Tracking Sport Results"
+      }
+    } else if section == 1 {
+      result =  "Calendars" //self.inactiveCalendarTitles.count
+    }
+    return result
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath as IndexPath, animated: true)
-//    theCard = self.eventCards[indexPath.row % self.eventCards.count]
-//    let activeMatchItem:MatchItem = items[indexPath.row]
-//    selectedMatchItemKey = activeMatchItem.key
-//    
-//    currentMatchItem = items[indexPath.row]
-//    showNextPVC(title:items[indexPath.row].title())
+    
+    func loadCalendarDetailVC() {
+      
+      if let detailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idCalendarDetailVC") as? CalendarDetailVC {
+        
+        detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(title:   "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBack))
+        
+        var info:calendarInfo
+        var key:String
+        if (indexPath.section == 0) {
+          //get color from systemCalendars for equal title
+          let sysCal = systemCalendars.filter{$0.title == sportsCalendars[indexPath.row].name}
+          
+          var theColor = UIColor.black.cgColor
+          if sysCal.count > 0 {
+            theColor = sysCal[0].color!
+          }
+          
+          info = calendarInfo(title :sportsCalendars[indexPath.row].name,
+                                color: theColor,
+                                numberOfEvents: 0,
+                                isActiveCalendar: true, isSportsCalendar: true)
+          key = sportsCalendars[indexPath.row].key
+        } else {
+          // does systemCalendar exist as inactive sportscalendar?
+          let sportsCal = inactiveSportsCalendars.filter{$0.name == systemCalendars[indexPath.row].title}
+          if sportsCal.count > 0 {
+            info = calendarInfo(title: sportsCal[0].name,
+                                color: systemCalendars[indexPath.row].color,
+                                numberOfEvents: 0,
+                                isActiveCalendar: false, isSportsCalendar: true)
+            key = sportsCal[0].key
+          } else {
+            info = inactiveCalendars[indexPath.row]
+            key = ""
+          }
+        }
+        
+        detailVC.key = key
+        detailVC.info = info
+        detailVC.title = info.title
+        detailVC.color = UIColor(cgColor: info.color!)
+        let navController = UINavigationController(rootViewController: detailVC)
+        self.present(navController, animated:true, completion: nil)
+      }
+    }
+    loadCalendarDetailVC()
+    
   }
+  
+  
+  
 }
-//  func showNextPVC(title: String) {
-//    
-//    if title == newEventTitle {
-//      mode = crud.crudMode.create
-//    } else {mode = crud.crudMode.read}
-//    
-//    if let crudVC = storyboard!.instantiateViewController(withIdentifier: "theNextPVC") as? EventsPVC {
-//      crudController = crudVC
-//      crudController.crudMode = mode
-//      crudController.matchItemKey = selectedMatchItemKey //String(describing: items[row].key)
-//      crudController.currentMatch = currentMatchItem
-//      crudController.navigationItem.title = title //order.name
-//      crudController.navigationItem.leftBarButtonItem =         UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBack))
-//      
-//      let navController = UINavigationController(rootViewController: crudController)
-//      
-//      let transition = CATransition()
-//      transition.duration = 0.2
-//      transition.type = kCATransitionPush
-//      transition.subtype = kCATransitionFromRight
-//      view.window!.layer.add(transition, forKey: kCATransition)
-//      
-//      present(navController, animated: false, completion: nil)
-//    }
-//  }
-//  
-//  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-//    if editingStyle == .delete {
-//      let item = items[indexPath.row]
-//      item.ref?.removeValue()
-//    }
-//  }
-//}
+
