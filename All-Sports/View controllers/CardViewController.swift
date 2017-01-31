@@ -18,6 +18,8 @@ class CardViewController: UIViewController, UITextFieldDelegate {
   
   var defaultText:String = "Vul iets in"
   public var currentMatch:MatchItem?
+  public var currentEvent:EKEvent?
+  
   var key: String?
   var value:String?
   
@@ -98,17 +100,17 @@ class CardViewController: UIViewController, UITextFieldDelegate {
           self.pickerView!.addSubview(sportPickerVC.view!)
         }
       }
-      
-      
     }
   }
   func prepareOpponentPicker(){
     
   }
+  
+  //UIApplication.sharedApplication().openURL(NSURL(string: "calshow://")!)
   var reminders: [EKReminder]!
   var eventStore = EKEventStore()
   
-  func prepareEventPicker() {
+  func prepareEventPickertje() {
     
     var titles : [String] = []
     var startDates : [NSDate] = []
@@ -209,12 +211,37 @@ class CardViewController: UIViewController, UITextFieldDelegate {
           self.pickerView!.addSubview(pickerVC.view!)
         }
       }
-      
-      
     }
-
   }
-  
+  func prepareEventPicker() {
+    let eVC = EKEventEditViewController()
+    
+    //                eVC.allowsCalendarPreview = true //?
+    //                eVC.allowsEditing = true
+    //                eVC.modalPresentationCapturesStatusBarAppearance = true
+    eVC.event = self.currentEvent
+    //                eVC.event.location
+    eVC.view.frame = self.pickerView.bounds
+    self.addChildViewController(eVC)
+    eVC.didMove(toParentViewController: self)
+    self.pickerView!.addSubview(eVC.view!)
+    //    if let pickerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idEKVC") as? EKVC {
+//      
+//      if let user = FIRAuth.auth()?.currentUser {
+//        if let itemKey = (self.sportsCard?.matchItemKey)  {
+//          let refString:String = "/users/\(user.uid)/match-items/\(self.key!)/\(itemKey)"
+//          
+//          //          pickerVC.refString = refString
+//          //          pickerVC.theSport = value
+//          pickerVC.view.frame = self.pickerView.bounds
+//          self.addChildViewController(pickerVC)
+//          pickerVC.didMove(toParentViewController: self)
+//          self.pickerView!.addSubview(pickerVC.view!)
+//        }
+//      }
+//    }
+  }
+
   func prepareResultPicker() {
     
     if let pickerVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idScorePicker") as? ResultPickerVC {

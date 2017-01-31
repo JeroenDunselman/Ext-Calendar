@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         let refString:String = "/users/\(user.uid)/match-items"
         let ref = FIRDatabase.database().reference(withPath: refString )
         let matchItem =
-          MatchItem(name: "een nieuw item",
+          MatchItem(date: NSNumber(value:Date().timeIntervalSince1970), name: "een nieuw item", participants: "",
                     addedByUser: "jerodunsch@gmail.com",
                     completed: false)
         

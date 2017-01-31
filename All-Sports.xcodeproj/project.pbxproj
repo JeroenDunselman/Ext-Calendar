@@ -42,6 +42,7 @@
 		A9AB0BCA1E38CCFC0069F4AA /* Wildlife.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9AB0BC91E38CCFC0069F4AA /* Wildlife.plist */; };
 		A9AB0BCC1E38CD200069F4AA /* Pets.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9AB0BCB1E38CD200069F4AA /* Pets.plist */; };
 		A9AB0BCE1E38CD550069F4AA /* calendar-add-128.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AB0BCD1E38CD550069F4AA /* calendar-add-128.png */; };
+		A9DA79D51E3B9054003D1B88 /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA79D41E3B9054003D1B88 /* EventsVC.swift */; };
 		A9FC61251E38C7EC00C558F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9FC61241E38C7EC00C558F6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		A9AB0BC91E38CCFC0069F4AA /* Wildlife.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Wildlife.plist; path = "All-Sports/Data/Wildlife.plist"; sourceTree = SOURCE_ROOT; };
 		A9AB0BCB1E38CD200069F4AA /* Pets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Pets.plist; path = "All-Sports/Data/Pets.plist"; sourceTree = SOURCE_ROOT; };
 		A9AB0BCD1E38CD550069F4AA /* calendar-add-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar-add-128.png"; sourceTree = "<group>"; };
+		A9DA79D41E3B9054003D1B88 /* EventsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		A9FC61241E38C7EC00C558F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "All-Sports/View controllers/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 				A96807121E38C57C00CA5524 /* ViewController.swift */,
 				A90C44471E38EC0F00071CCB /* CalendarPickerVC.swift */,
 				A90C444B1E39054000071CCB /* CalendarDetailVC.swift */,
+				A9DA79D41E3B9054003D1B88 /* EventsVC.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				A96807331E38C66B00CA5524 /* PetCard.swift in Sources */,
 				A96807141E38C57C00CA5524 /* EKVC.swift in Sources */,
 				A96807381E38C6A300CA5524 /* SignInViewController.swift in Sources */,
+				A9DA79D51E3B9054003D1B88 /* EventsVC.swift in Sources */,
 				A96807171E38C57C00CA5524 /* ViewController.swift in Sources */,
 				A96807131E38C57C00CA5524 /* CardViewController.swift in Sources */,
 				A96807361E38C66B00CA5524 /* UserProfile.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import EventKit
 
 class EventsPVC: UIPageViewController, UIPageViewControllerDelegate{
   
@@ -21,6 +22,7 @@ class EventsPVC: UIPageViewController, UIPageViewControllerDelegate{
   public var resultText: String?
   public var matchItemKey: String?
   public var currentMatch:MatchItem?
+  public var currentEvent:EKEvent?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,6 +33,7 @@ class EventsPVC: UIPageViewController, UIPageViewControllerDelegate{
       if let cardViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "idCardViewControllerEvents") as? CardViewController {
         
         cardViewController.key = self.matchItemKey
+        cardViewController.currentEvent = self.currentEvent
         cardViewController.pageIndex = index
         cardViewController.sportsCard = self.eventCards[index]
         self.pagesArray.append(cardViewController)

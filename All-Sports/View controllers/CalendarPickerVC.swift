@@ -216,10 +216,10 @@ extension CalendarPickerVC: UITableViewDataSource, UITableViewDelegate {
           key = sportsCalendars[indexPath.row].key
         } else {
           // does systemCalendar exist as inactive sportscalendar?
-          let sportsCal = inactiveSportsCalendars.filter{$0.name == systemCalendars[indexPath.row].title}
+          let sportsCal = inactiveSportsCalendars.filter{$0.name == inactiveCalendars[indexPath.row].title}
           if sportsCal.count > 0 {
             info = calendarInfo(title: sportsCal[0].name,
-                                color: systemCalendars[indexPath.row].color,
+                                color: inactiveCalendars[indexPath.row].color,
                                 numberOfEvents: 0,
                                 isActiveCalendar: false, isSportsCalendar: true)
             key = sportsCal[0].key

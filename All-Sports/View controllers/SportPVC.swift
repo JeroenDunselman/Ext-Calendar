@@ -45,7 +45,7 @@ class SportPVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
     let ref = FIRDatabase.database().reference(withPath: refString! )
 //    if let text = fillInText.text {
-//      ref.setValue(data[row])
+      ref.setValue(data[row])
 //    }
   }
 
